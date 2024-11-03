@@ -1,12 +1,15 @@
-from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
-from sqlalchemy.orm import DeclarativeBase, sessionmaker
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
+from sqlalchemy.orm import DeclarativeBase
 
 from backend.config import settings
+from backend.mixins import ModelMixin
 
-engine = create_async_engine(settings.DATABASE_URL, echo=True)
+DATABASE_URL = settings.get_db_url()
 
-async_session_maker = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
+engine = create_async_engine(DATABASE_URL, echo=True)
+
+async_session_maker = async_sessionmaker(engine, expire_on_commit=False)
 
 
-class Base(DeclarativeBase):
+class Base(DeclarativeBase, ModelMixin):
     pass

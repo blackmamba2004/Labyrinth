@@ -1,5 +1,4 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
-from pydantic import computed_field
 
 
 class Settings(BaseSettings):
@@ -11,8 +10,7 @@ class Settings(BaseSettings):
 
     model_config = SettingsConfigDict(env_file='.env')
 
-    @computed_field
-    def DATABASE_URL(self) -> str:
+    def get_db_url(self) -> str:
         return f"postgresql+asyncpg://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.POSTGRES_DB}"
 
 

@@ -2,6 +2,9 @@ build:
 	sudo docker compose build
 
 up:
+	sudo docker compose up -d
+
+up-with-logs:
 	sudo docker compose up
 
 down:
