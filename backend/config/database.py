@@ -1,8 +1,8 @@
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 from sqlalchemy.orm import DeclarativeBase
 
-from backend.config import settings
-from backend.mixins import ModelMixin
+from backend.config.settings import settings
+from backend.internal.models.mixins import ModelMixin
 
 DATABASE_URL = settings.get_db_url()
 

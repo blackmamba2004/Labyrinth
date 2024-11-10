@@ -1,8 +1,8 @@
 from sqlalchemy import String
 from sqlalchemy.orm import Mapped, mapped_column
 
-from backend.fields import int_pk, str_unique, created_at, updated_at
-from backend.database import Base
+from backend.internal.models.fields import int_pk, str_unique, created_at, updated_at
+from backend.config.database import Base
 
 
 class BaseUser(Base):

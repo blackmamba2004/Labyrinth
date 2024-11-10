@@ -1,9 +1,9 @@
 import asyncio
 from sqlalchemy import select
 
-from backend.database import async_session_maker
-from backend.users.models import User
-from backend.users.schemas import UserOut
+from backend.config.database import async_session_maker
+from backend.internal.users.models import User
+from backend.internal.users.schemas import UserOut
 
 
 async def main():
