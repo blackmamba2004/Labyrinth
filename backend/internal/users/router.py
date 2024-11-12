@@ -8,4 +8,4 @@ router = APIRouter(prefix='/users', tags=['Users'])
 
 @router.get(path='/me', dependencies=[Security(check_access_token)])
 async def get_me_user_info(request: Request):
-    return f'Hello, {request.state.user.email}'
+    return request.state.user.email
