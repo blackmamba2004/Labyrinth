@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from backend.pkg.auth.transport.router import router as auth_router
 from backend.internal.users.router import router as users_router
 from backend.internal.levels.router import router as levels_router
+from backend.internal.statistics.router import router as statistics_router
 
 app = FastAPI()
 
@@ -18,3 +19,4 @@ app.add_middleware(
 app.include_router(auth_router)
 app.include_router(users_router)
 app.include_router(levels_router)
+app.include_router(statistics_router)

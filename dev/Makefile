@@ -11,7 +11,7 @@ build-up:
 	docker compose up --build
 
 psql:
-	docker exec -it labyrinth_db_dev psql -U dev -d labyrinth_dev
+	docker exec -it labyrinth_db_dev psql -U dev -d dev_db
 
 in_app:
 	docker exec -it labyrinth_app_dev /bin/bash

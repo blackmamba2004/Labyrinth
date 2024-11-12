@@ -9,6 +9,17 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from backend.config.database import Base, DATABASE_URL
 from backend.internal.users.models import User
+# from backend.internal.statistics.models import Statistic
+
+import sys
+from pathlib import Path
+
+# Путь к директории /app
+app_directory = Path(__file__).parents[3]
+
+backend_directory = app_directory / 'backend'
+
+sys.path.append(str(backend_directory))
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
