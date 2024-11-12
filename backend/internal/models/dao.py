@@ -1,4 +1,3 @@
-from pydantic import BaseModel
 from sqlalchemy import insert, select
 
 from backend.config.database import async_session_maker, Base
