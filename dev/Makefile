@@ -7,6 +7,9 @@ up:
 down:
 	docker compose down
 
+down-no-data:
+	docker compose down -v
+
 build-up:
 	docker compose up --build
 
